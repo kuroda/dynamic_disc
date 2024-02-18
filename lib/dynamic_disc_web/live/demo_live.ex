@@ -10,11 +10,20 @@ defmodule DynamicDiscWeb.DemoLive do
     {:ok, socket}
   end
 
+  @background_colors ~w(
+    bg-red-500
+    bg-green-500
+    bg-blue-500
+    bg-cyan-500
+  )
+
   def handle_event("change_state", _params, socket) do
+    bg_color = Enum.random(@background_colors)
+
     socket =
       socket
       |> assign(:diameter, Enum.random(50..300))
-      |> assign(:bg_color, "bg-red-500")
+      |> assign(:bg_color, bg_color)
 
     {:noreply, socket}
   end
