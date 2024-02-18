@@ -5,7 +5,7 @@ defmodule DynamicDiscWeb.DemoLive do
     socket =
       socket
       |> assign(:diameter, 100)
-      |> assign(:bg_color, "")
+      |> assign(:bg_color, "bg-red-500")
 
     {:ok, socket}
   end
@@ -14,18 +14,18 @@ defmodule DynamicDiscWeb.DemoLive do
     socket =
       socket
       |> assign(:diameter, Enum.random(50..300))
-      |> assign(:bg_color, "")
+      |> assign(:bg_color, "bg-red-500")
 
     {:noreply, socket}
   end
 
   @class_tokens ~w(
-    bg-red-500
     rounded-full
     cursor-pointer
   )
 
-  defp get_class() do
-    Enum.join(@class_tokens, " ")
+  defp get_class(bg_color) do
+    tokens = [bg_color | @class_tokens]
+    Enum.join(tokens, " ")
   end
 end
