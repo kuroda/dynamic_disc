@@ -13,7 +13,7 @@ defmodule DynamicDiscWeb.DemoLive do
   def handle_event("change_state", _params, socket) do
     socket =
       socket
-      |> assign(:diameter, socket.assigns.diameter + 50)
+      |> assign(:diameter, Enum.random(50..300))
       |> assign(:bg_color, "")
 
     {:noreply, socket}
