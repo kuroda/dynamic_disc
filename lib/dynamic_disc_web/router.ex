@@ -17,7 +17,7 @@ defmodule DynamicDiscWeb.Router do
   scope "/", DynamicDiscWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", DemoLive
   end
 
   # Other scopes may use custom stacks.
