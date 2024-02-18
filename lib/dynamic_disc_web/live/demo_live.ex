@@ -18,4 +18,14 @@ defmodule DynamicDiscWeb.DemoLive do
 
     {:noreply, socket}
   end
+
+  @class_tokens ~w(
+    bg-red-500
+    rounded-full
+    cursor-pointer
+  )
+
+  defp get_class() do
+    Enum.join(@class_tokens, " ")
+  end
 end

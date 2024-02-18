@@ -7,7 +7,7 @@
   <div class="flex justify-around">
     <div
       phx-click="change_state"
-      class="bg-red-500 rounded-full cursor-pointer"
+      class={get_class()}
       style={"width: #{@diameter}px; height: #{@diameter}px"}
     >
     </div>
