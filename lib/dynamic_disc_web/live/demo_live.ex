@@ -19,7 +19,9 @@ defmodule DynamicDiscWeb.DemoLive do
 
   def handle_event("change_state", _params, socket) do
     bg_color =
-      Enum.random(@background_colors -- [socket.assigns.bg_color])
+      Enum.random(
+        @background_colors -- [socket.assigns.bg_color]
+      )
 
     socket =
       socket
